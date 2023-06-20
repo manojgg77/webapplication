@@ -4,17 +4,57 @@
         <servlet-name>registrationuser</servlet-name>
         <servlet-class>userservlet.registrationUser</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>registrationuser</servlet-name>
-        <url-pattern>/registrationUser</url-pattern>
-    </servlet-mapping>
     <servlet>
         <servlet-name>loginuser</servlet-name>
         <servlet-class>userservlet.LoginUser</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>updateproduct</servlet-name>
+        <servlet-class>Adminpower.updateproduct</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>additemadmin</servlet-name>
+        <servlet-class>Adminpower.additemadmin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deleteproduct</servlet-name>
+        <servlet-class>Adminpower.deleteproduct</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>update</servlet-name>
+        <servlet-class>Adminpower.update</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>siradd</servlet-name>
+        <servlet-class>Adminpower.siradd</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>registrationuser</servlet-name>
+        <url-pattern>/registrationUser</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>loginuser</servlet-name>
         <url-pattern>/LoginUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>updateproduct</servlet-name>
+        <url-pattern>/updateproduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>additemadmin</servlet-name>
+        <url-pattern>/additemadmin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deleteproduct</servlet-name>
+        <url-pattern>/deleteproduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>update</servlet-name>
+        <url-pattern>/update</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>siradd</servlet-name>
+        <url-pattern>/AddImage1</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

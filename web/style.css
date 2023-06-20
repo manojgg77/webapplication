@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+nav {
+    flex: 1;
+    text-align: right;
+
+}
+
+nav ul {
+    display: inline-block;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+
+}
+
+a {
+    text-decoration: none;
+    color: rgb(0, 47, 255);
+}
+
+p {
+    color: saddlebrown;
+}
+
+.menu-icon {
+    width: 28px;
+    margin-left: 20px;
+}
+
+/* .card img{
+    width: 77%;
+    height: 133px;
+    /* margin:auto;
+    margin-top: 20px; 
+ }   */
+.button img {
+    width: 20px;
+    height: 20px;
+    margin: 0px;
+}
+
+.cart-img img {
+    width: 30%;
+    height: 19px;
+    margin: 10px;
+
+}
+
+/* admin.jsp file css */
+.ff {
+    margin: auto;
+    margin-top: 25px;
+}
+
+.mz {
+    margin-top: 20px;
+}
+
+@media(min-width:1100px) {
+    .mz {
+        font-size: 42px;
+    }
+}
+
+@media(min-width:900px) {
+    .mz {
+        font-size: 39px;
+    }
+}
+
+@media(min-width:800px) {
+    .mz {
+        font-size: 33spx;
+    }
+}
+
+@media(min-width:700px) {
+    .mz {
+        font-size: 28px;
+    }
+}
+
+@media(min-width:600px) {
+    .mz {
+        font-size: 25px;
+    }
+}
+
+@media(min-width:500px) {
+    .mz {
+        font-size: 23px;
+    }
+}
+
+@media(max-width:500px) {
+    .mz {
+        font-size: 20px;
+    }
+}
+
+.navbar-toggler {
+    font-size: 0px;
+}

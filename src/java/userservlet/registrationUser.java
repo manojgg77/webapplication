@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -34,6 +35,15 @@ public class registrationUser extends HttpServlet {
        
         String uphone=req.getParameter("uphone");
         String upwd=req.getParameter("upwd");
+        HttpSession ht=req.getSession();
+        if( uname.isEmpty()||uemail.isEmpty()||uphone.isEmpty()||upwd.isEmpty())
+        {
+            ht.setAttribute("message", "Please fill all feild");
+            res.sendRedirect("registrationuser.jsp");
+            return;
+             
+        }  
+        
          Registeruserdb rg=new Registeruserdb();
         int id= rg.register(uname,uemail,uphone,upwd);
         out.println(id);
