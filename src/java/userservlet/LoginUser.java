@@ -27,8 +27,7 @@ public class LoginUser extends HttpServlet {
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res)
-            throws ServletException, IOException {
-         PrintWriter out = res.getWriter();
+            throws ServletException, IOException {   PrintWriter out = res.getWriter();
           res.setContentType("text/html");
         out.println("<h1>welcome servlet</h1>");
          
@@ -44,6 +43,7 @@ public class LoginUser extends HttpServlet {
        } else {
            out.println("<h1>failed!!!!!!!!!!!!!!!!!!!</h1>");
         }
+      
     }
 
     

@@ -29,14 +29,14 @@ public class deleteproduct extends HttpServlet {
        PrintWriter out = response.getWriter();
            HttpSession ht=request.getSession();
           response.setContentType("text/html");
-                int productid=(Integer.parseInt(request.getParameter("id")));
+                int id=(Integer.parseInt(request.getParameter("id")));
                
                 adminalldb db=new adminalldb();
-                int rows=db.adminDELETE(productid);
+                int rows=db.adminDELETE(id);
                 if(rows>0)
                 {
                       ht.setAttribute("message", "one product deleted ");
-                    ht.setAttribute("productid",productid);
+                    ht.setAttribute("productid",id);
                     response.sendRedirect("deleteitembyadmin.jsp");
                   
                     return;

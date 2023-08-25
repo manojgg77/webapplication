@@ -20,7 +20,7 @@ public class adminalldb {
          dbconnection cn=new dbconnection("product"); 
         try{
                Statement st=cn.getConnectionDb().createStatement();
-                int rs=st.executeUpdate("update product set productname='"+productname+"', productprice='"+productprice+"' where productid='"+productid+"'");
+                int rs=st.executeUpdate("update product set name='"+productname+"',price='"+productprice+"',quantity='"+quantity+"'where id='"+productid+"'");
                 return rs;
          }catch (Exception e){
              System.out.println(""+e);
@@ -57,12 +57,12 @@ public int adminADDnewitem(int productid,String productname,int  productprice,in
          }
      return 0;
     }
-  public int  adminDELETE(int productid)
+  public int  adminDELETE(int id)
     {
           try{
          dbconnection cn=new dbconnection("product");   
            Statement st=cn.getConnectionDb().createStatement();
-            int rows = st.executeUpdate("DELETE   FROM product where productid='"+productid+"'  ");
+            int rows = st.executeUpdate("DELETE   FROM product where id='"+id+"'  ");
             return rows;
      }
       catch(Exception e)

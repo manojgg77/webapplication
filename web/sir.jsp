@@ -45,7 +45,7 @@
     <div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
@@ -73,10 +73,11 @@
     </div>
   </div>
 </nav>
-                        
+                       
 <div class="d-flex align-items-start">
   <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-    <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Add Product</button>
+      <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true"><a  class="text-decoration-none text-center" href="sir.jsp">Add Product</a></button>
+     <a href="updateitemadmin.jsp"><button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false"><a  class="text-decoration-none text-center" href="updateitemadmin.jsp">Update</a></button></a>
     <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false"><a herf="updateproduct.jsp">Profile</a></button>
     <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</button>
     <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
@@ -98,6 +99,10 @@
   			<label for="formGroupExampleInput2" class="form-label">Product Rate:-</label>
   			<input type="number" style="-moz-appearance:textfield" class="form-control" id="formGroupExampleInput2" placeholder="Enter Product Rate..." name="rate">
 			</div>
+                        	<div class="mb-3">
+  			<label for="formGroupExampleInput2" class="form-label">Product Quantity:-</label>
+  			<input type="number" style="-moz-appearance:textfield" class="form-control" id="formGroupExampleInput2" placeholder="Enter Product Rate..." name="quantity">
+			</div>
 			<div class="mb-3">
   				  Select Image :
   			 <input type="file" name="image">
@@ -110,10 +115,13 @@
 		
 <table border="1" width="500px">
 <tr>
-<td>RsNo.</td>
+<td>id.</td>
 <td>Image</td>
 <td>name</td>
 <td>rate</td>
+<td>quantity</td>
+<td>Delete</td>
+<td>edit</td>
 
 </tr>
 <h1>
@@ -131,13 +139,16 @@ Statement statement =connection.getConnectionDb().createStatement();
 String sql ="select * from product";
 ResultSet  resultSet = statement.executeQuery(sql);
 while(resultSet.next()){
-int pid=resultSet.getInt("productid");
+int pid=resultSet.getInt("id");
+System.out.println(""+resultSet.getString("name"));
 %>
 <tr>
 <td><%=pid %></td>
 <td><img src="images/<%=resultSet.getString("imagename") %>" style="width:100px"/></td>
-<td><%=resultSet.getString("productname") %></td>
-<td><%=resultSet.getString("productprice") %></td>
+<td><%=resultSet.getString("name") %></td>
+
+<td><%=resultSet.getInt("price") %></td>
+<td><%=resultSet.getInt("quantity") %></td>
 <td> <a href="deleteproduct?id=<%=pid %>">Delete</a></td>
 <td> <a href="update?id=<%=pid %>">Edit</a></td>
 </tr>

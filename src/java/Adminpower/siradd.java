@@ -47,7 +47,8 @@ public class siradd extends HttpServlet {
 		Part file=request.getPart("image");
 		String productname= request.getParameter("name");
 		int productprice= Integer.parseInt(request.getParameter("rate"));
-		System.out.print(productname);
+                int quantity= Integer.parseInt(request.getParameter("quantity"));
+		System.out.print(quantity);
 		String imageFileName=file.getSubmittedFileName();  // get selected image file name
 		System.out.println("Selected Image File Name : "+imageFileName);
 		String path=request.getServletContext().getRealPath("images");
@@ -79,11 +80,12 @@ public class siradd extends HttpServlet {
 		{
 			dbconnection connection=new dbconnection("product");
 			PreparedStatement stmt;
-			String query="insert into  product(productname,productprice,imagename) values(?,?,?)";
+			String query="insert into  product(name,price,quantity,imagename) values(?,?,?,?)";
 			stmt=connection.getConnectionDb().prepareStatement(query);
 			stmt.setString(1,productname);
 			stmt.setInt(2,productprice);
-			stmt.setString(3,imageFileName);
+                        stmt.setInt(3,quantity);
+			stmt.setString(4,imageFileName);
 			
 			int row=stmt.executeUpdate(); // it returns no of rows affected.
 			

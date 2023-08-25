@@ -48,8 +48,8 @@ public class updateproduct extends HttpServlet {
                 int productid=(Integer.parseInt(request.getParameter("productid"+Integer.toString(i))));
                 String productname= request.getParameter("productname"+Integer.toString(i));
                 int productprice=(Integer.parseInt(request.getParameter("productprice"+Integer.toString(i))));   
-                int quantity1=(Integer.parseInt(request.getParameter("quantity"+Integer.toString(i)))); 
-                sum=sum + ab.update(productid, productname, productprice,quantity1);
+                int quantity=(Integer.parseInt(request.getParameter("quantity"+Integer.toString(i)))); 
+                sum=sum + ab.update(productid, productname, productprice,quantity);
              
              i++;
              j--;
